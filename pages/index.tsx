@@ -39,7 +39,6 @@ const Home: NextPage = ({ movies }: any) => {
 }
 
 export async function getServerSideProps() {
-  try {
     await connectDB()
 
     const res = await Movie.find({})
@@ -52,9 +51,6 @@ export async function getServerSideProps() {
 
     // console.log(res)
     return {props: {movies}}
-  } catch (error) {
-    
-  }
 }
 
 export default Home
